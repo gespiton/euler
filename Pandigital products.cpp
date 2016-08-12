@@ -26,10 +26,13 @@ int main()
 void cal (int product)
 {
     int bound = sqrt(product)+1;
-    for(int i=2; i!=bound; ++i) {
-        if(product%i==0) {
-            if(jud(product,i,product/i)) {
-                fprintf(file,"%5d  %5d  %5d\n",product/i, i , product);
+    for(int i=2; i!=bound; ++i)
+    {
+        if(product%i==0)
+        {
+            if(jud(product,i,product/i))
+            {
+                fprintf(file,"%5d  %5d  %5d\n",product/i, i, product);
                 total+=product;
                 return;
             }
@@ -40,17 +43,20 @@ bool jud(int lhs,int mhs,int rhs)
 {
     vector<int> duplicate;
     set<int> get;
-    while(lhs) {
+    while(lhs)
+    {
         get.insert(lhs%10);
         duplicate.push_back(lhs%10);
         lhs/=10;
     }
-    while(mhs) {
+    while(mhs)
+    {
         get.insert(mhs%10);
         duplicate.push_back(mhs%10);
         mhs/=10;
     }
-    while(rhs) {
+    while(rhs)
+    {
         get.insert(rhs%10);
         duplicate.push_back(rhs%10);
         rhs/=10;
